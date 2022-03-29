@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
-import background from '../src/images/gether-background.png'
 import WelcomePage from './WelcomePage';
+import MapPage from './MapPage';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
     <div className="App">
 
       <WelcomePage />
+      <MapPage />
         
     </div>
     </>
@@ -16,6 +17,3 @@ function App() {
 }
 
 export default App;
-
-
-// style={{ background: `url(${background})`}}
