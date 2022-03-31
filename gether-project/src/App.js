@@ -1,7 +1,6 @@
 import './App.css';
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import background from '../src/images/gether-background.png'
 import WelcomePage from './WelcomePage';
 import LocationPage from './LocationPage';
 import MapPage from './MapPage';
@@ -12,11 +11,7 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
 
-      <WelcomePage />
-      <MapPage />
-=======
       <h1>gether.</h1>
     <Router>
       <Routes>
@@ -25,7 +20,6 @@ function App() {
           <Route path="/locationpage" element={<LocationPage />} />
           <Route path="/mappage" element={<MapPage />} />
           <Route path="*" element={<ErrorPage />} />
->>>>>>> thomas-branch2
         
       </Routes>
     </Router>
@@ -37,6 +31,3 @@ function App() {
 export default App;
 
 
-
-
-// style={{ background: `url(${background})`}}

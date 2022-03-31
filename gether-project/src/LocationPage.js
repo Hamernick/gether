@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Form from "./Form";
 import CardList from "./CardList";
 import Card from "./Card";
+import MapPage from "./MapPage";
 
 
 
@@ -44,14 +45,13 @@ const allDisplayCards = displayCard.map((card) => {
   }
     
 /////////
-//className=" gap-8 columns-4 ..."
     return (
      <div id="location-page" className="container">
        <div className="row">
           <div className="col">
             <Form addNewCard={addNewCard} handleIsSignedIn={handleIsSignedIn}/>
-            <div id="fake-map">
-              <img src="https://images1.apartmenthomeliving.com/m2/cqbbGG_vKjy3x3zedfJsrYmvPnb4QehqRdGmbY8a__A/H270W360/map.jpg"></img>
+            <div>
+             <MapPage />
             </div>
           </div>
           <div id="cardlist" className="col-6">
@@ -64,9 +64,5 @@ const allDisplayCards = displayCard.map((card) => {
   }
         
         
-        
-        
-  // addNewCard={addNewCard}
-  //filteredCards={filteredCards}
   export default LocationPage;
   

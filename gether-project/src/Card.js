@@ -25,7 +25,7 @@ function Card({card, isSignedIn}) {
 
     return (
       <div id="display-card" className="group-hover:text-white font-semibold text-slate-900">
-      <img id="card-img" className="inline-block h-16 w-16 rounded-full ring-2 ring-white" src={image}></img>
+      <img id="card-img" className="inline-block h-16 w-16 rounded-full ring-2 ring-white" src={image} alt="card"></img>
       <div>
        <p id="card-name">{name}</p>
        <p id="card-title">{title}</p>

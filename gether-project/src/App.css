@@ -1,7 +1,7 @@
 .App {
     width: 100%;
     height: 175vh;
-    background-image: url("/Users/thomaskinsella/Development2/code/projects/gether/gether-project/src/images/gether-background.png");
+    background-image: url("../src/images/gether-background.png");
     background-size: cover;
 }
 
@@ -157,7 +157,6 @@ h1 {
 
 
 #fake-map {
-    background-image: url("https://images1.apartmenthomeliving.com/m2/cqbbGG_vKjy3x3zedfJsrYmvPnb4QehqRdGmbY8a__A/H270W360/map.jpg");
     margin-top: 1em;
     display: inline-block;
     margin-bottom: 10px;
@@ -168,6 +167,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    background: white;
 }
 
 #fake-big-map {

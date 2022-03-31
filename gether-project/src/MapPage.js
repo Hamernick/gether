@@ -1,88 +1,92 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import iconImage from './images/new-icon-05.png'
 import {
-  GoogleMap, 
+  GoogleMap,
+  InfoWindow,
   LoadScript,
   Marker,
-  InfoWindow,
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
+import parks from "./db.json"
+
 
 const mapContainerStyle = {
   height: "400px",
   width: "400px",
+  margin: 40,
+  border_radius: 50
 };
-
 const center = {
   lat: 40.705280,
   lng: -74.014259,
 };
-
 const options = {
   styles: mapStyles,
   disableDefaultUI: true,
 }
- 
 const image = iconImage
 
+export default function MapPage() {
 
-function MapPage() {
+  const [selected, setSelected] = useState(null);
+  let navigate = useNavigate();
 
-  const {selected, setSelected} = useState(false)
-  
     return (
-     <div>
+
+     <div id="fake-map">
        <LoadScript
         googleMapsApiKey="AIzaSyAzrQRwjAnB1gVFARsnceWdivpsUfxltGE">
        <GoogleMap mapContainerStyle={mapContainerStyle} zoom={14} center={center} options={options} >
-       <Marker 
-          key="marker_1"  
-          icon={{ 
+       
+
+      {parks.locations.map(park => (
+        <Marker    
+          key={park.id}
+          icon={{
             url: image,
             scaledSize: {width: 30, height: 37}
             }}
-            position={{ lat: 40.705280, lng: -74.014259 }}
+
+            position={{ 
+              lat: park.lat, 
+              lng: park.lng 
+            }}
             
             onClick={() => {
-              setSelected(!selected)}}
+              setSelected(park)
+            }}
         />
+      ))}
 
-        {selected ? (
-          // <InfoWindow 
-          //   position={{ lat: 40.705280, lng: -74.014259 }} 
-          //   onCloseClick={() => {
-          //     setSelected(null);
-          //   }}
-          // >
+{selected ? (
+          <InfoWindow
+            position={{ lat: selected.lat, lng: selected.lng }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
+          >
             <div>
-              <h2>
-                <span>
-                  TEST
-                </span>
-                TEST
-              </h2>
+            <div class="max-w-sm mx-auto bg-white rounded-md shadow-lg flex items-center space-x-4">
+            <div class="shrink-0">
+            <img class="h-12 w-12" src="https://coursereport-production.imgix.net/uploads/school/logo/8/original/flatironschool.png?w=200&h=200" alt="flatiron Logo"></img>
             </div>
-          // </InfoWindow>
+            <div>
+           <div class="text-xl font-medium text-black">Flatiron School</div>
+         <p class="text-slate-500">There are 6 people currently networking here</p>
+         <button onClick={() => navigate("/locationpage")}>View Location</button>
+        </div>
+          </div>
+            </div>
+          </InfoWindow>
         ) : null}
 
        </GoogleMap>
        </LoadScript>
-=======
-import React from "react";
-import { useNavigate } from "react-router-dom";
-
-function MapPage() {
-
-  let navigate = useNavigate();
-    
-    return (
-     <div id="map-page">
-       <img id="fake-big-map" onClick={() => navigate("/locationpage")}src="https://images1.apartmenthomeliving.com/m2/cqbbGG_vKjy3x3zedfJsrYmvPnb4QehqRdGmbY8a__A/H270W360/map.jpg"></img>
->>>>>>> thomas-branch2
-     </div>
-    );
+       </div>
+  )
   }
-  
-  export default MapPage;
-  
+
+
+
+  // id="fake-map"
