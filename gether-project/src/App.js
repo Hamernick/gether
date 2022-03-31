@@ -9,12 +9,9 @@ import ErrorPage from './ErrorPage';
 function App() {
   return (
     <div className="App">
-    <Router>
-      <Routes>
-      
-          <Route path="/" element={<WelcomePage />} />
-          <Route path="/locationpage" element={<LocationPage />} />
-          <Route path="*" element={<ErrorPage />} />
+
+      <WelcomePage />
+      <MapPage />
         
       </Routes>
     </Router>
