@@ -14,6 +14,12 @@ import Card from "./Card";
 
 function LocationPage() {
 
+  const [isSignedIn, setIsSignedIn] = useState(false)
+
+  function handleIsSignedIn() {
+    setIsSignedIn(true);
+  }
+
   useEffect(() => {
 
     fetch('http://localhost:3000/gether-users')
@@ -27,7 +33,7 @@ function LocationPage() {
 const [displayCard, setDisplayCard] = useState([]);
 
 const allDisplayCards = displayCard.map((card) => {
-  return <Card key={card.id} card={card}/>
+  return <Card key={card.id} card={card} isSignedIn={isSignedIn}/>
 })
     
 
@@ -38,14 +44,28 @@ const allDisplayCards = displayCard.map((card) => {
   }
     
 /////////
+//className=" gap-8 columns-4 ..."
     return (
-     <>
-     <Form addNewCard={addNewCard}/>
-     <CardList /> 
-     {allDisplayCards}
-     </>
+     <div id="location-page" className="container">
+       <div className="row">
+          <div className="col">
+            <Form addNewCard={addNewCard} handleIsSignedIn={handleIsSignedIn}/>
+            <div id="fake-map">
+              <img src="https://images1.apartmenthomeliving.com/m2/cqbbGG_vKjy3x3zedfJsrYmvPnb4QehqRdGmbY8a__A/H270W360/map.jpg"></img>
+            </div>
+          </div>
+          <div id="cardlist" className="col-6">
+            <CardList /> 
+            {allDisplayCards}
+          </div>
+        </div>
+     </div>
     );
   }
+        
+        
+        
+        
   // addNewCard={addNewCard}
   //filteredCards={filteredCards}
   export default LocationPage;
