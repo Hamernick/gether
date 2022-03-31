@@ -5,11 +5,10 @@ function WelcomePage() {
     
     let navigate = useNavigate();
     return (
-     <>
-     <h2>Welcome to Gether, lets get started</h2>
-     <button onClick={() => navigate("/locationpage")}>This button will route you to the next page🚀</button>
-      
-     </>
+    <div id="welcome-div">
+      <h2 id="welcome-h2">welcome to gether.</h2>
+      <button id="welcome-button" className="button" onClick={() => navigate("/mappage")}>let's get started</button>
+    </div>
      
     );
   }

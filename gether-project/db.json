@@ -14,16 +14,16 @@
       "name": "Thomas Kinsella",
       "title": "Software Engineer",
       "image": "https://ca.slack-edge.com/T02MD9XTF-U030PD0HT1R-1c2c0ceaf670-72",
-      "status": "Networking",
+      "status": "Looking for work",
       "linkedIn": "https://www.linkedin.com/in/thomas-kinsella-b3569b235/",
-      "website": "#"
+      "website": "https://github.com/thomas-kinsella4"
     },
     {
       "id": 3,
       "name": "Adam Crespo",
       "title": "Software Engineer",
       "image": "https://ca.slack-edge.com/T02MD9XTF-U0308PF9CQP-3cca5d945c67-192",
-      "status": "Networking",
+      "status": "CEO at Looking for work",
       "linkedIn": "https://www.linkedin.com/in/adam-c-87697722b/",
       "website": "#"
     },
@@ -49,10 +49,19 @@
       "name": "Wes Bourke",
       "image": "https://ca.slack-edge.com/T02MD9XTF-U02USNBSR0D-c1509953299c-192",
       "title": "Software Enginner",
-      "status": "Networking",
+      "status": "Recently hired",
       "linkedIn": "https://www.linkedin.com/in/wes-bourke-2a51a610b/",
-      "website": "#",
+      "website": "https://github.com/wesbourke101",
       "id": 6
+    },
+    {
+      "name": "Xhulio Mihali",
+      "image": "https://ca.slack-edge.com/T02MD9XTF-U02RSFAPFJ5-be6dd84eecd9-192",
+      "title": "Software Enginner",
+      "status": "Networking",
+      "linkedIn": "https://www.linkedin.com/in/xhuliomihali/",
+      "website": "#",
+      "id": 7
     }
   ]
 }
